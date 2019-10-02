@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_bg"
+    tools:context=".ui.referral.ReferralFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:cardElevation="@dimen/_2sdp"
+        android:id="@+id/topCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_name"
+                android:text="Name"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/gray2"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_surname"
+                android:text="Surname"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/gray2"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintStart_toEndOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_referral"
+                android:src="@drawable/cross"
+                app:layout_constraintEnd_toEndOf="@+id/tv_referral"
+                app:layout_constraintStart_toStartOf="@+id/tv_referral"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_referral"
+                android:text="Qualified Referrals"
+                android:padding="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/gray2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_referral" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:cardElevation="@dimen/_2sdp"
+        android:id="@+id/cardBottom"
+        app:layout_constraintTop_toBottomOf="@+id/topCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_head_referral"
+                android:text="@string/your_referrals"
+                android:padding="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/referrals"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/iv_referral_handshake"
+                app:layout_constraintEnd_toEndOf="@+id/tv_referral_count"
+                app:layout_constraintTop_toBottomOf="@+id/tv_head_referral"
+                app:layout_constraintStart_toStartOf="@id/tv_referral_count"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_referral_count"
+                android:text="1-5 Referrals"
+                android:textColor="@color/gray2"
+                android:padding="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toEndOf="@+id/iv_referral_handshake"
+                app:layout_constraintTop_toBottomOf="@+id/iv_referral_handshake"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/iv_award"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/cup"
+                app:layout_constraintEnd_toEndOf="@+id/tv_referral_desc"
+                app:layout_constraintStart_toStartOf="@+id/tv_referral_desc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_head_referral"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_referral_desc"
+                android:gravity="center"
+                android:textColor="@color/gray2"
+                android:fontFamily="@font/roboto_regular"
+                android:text=">6 Referrals\n(Free Subscription)"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_award" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:padding="@dimen/_3sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cardBottom"
+        android:id="@+id/bottomView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:padding="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:drawableStart="@drawable/share_white"
+            android:id="@+id/btnSave"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_12ssp"
+            android:text="@string/share_referrals" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

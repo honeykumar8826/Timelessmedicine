@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".ui.oilandblenddetail.OilAndBlendDetailActivity">
+   <!-- // using a this whole layout for blend and oil -->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/img_back"
+                android:layout_width="0dp"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_12ssp"
+                android:layout_weight="0.4">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2.2"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@color/white" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="end"
+                android:layout_marginEnd="@dimen/_12ssp"
+                android:layout_weight="0.4">
+
+              <!--  <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/search_white" />-->
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_share_oil_blend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_12ssp"
+                android:src="@drawable/share_color" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_local_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_12ssp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:text="@string/local_name_of_oil"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/black1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_local_oil_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_latin_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_12ssp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:textColor="@color/black1"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/latin_name_of_oil" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text=":" />
+
+            <TextView
+                android:id="@+id/tv_latin_oil_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:text="" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_dummy_short_characterstics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12ssp"
+            android:textColor="@color/black1"
+            android:text="@string/short_characterstics" />
+
+        <TextView
+            android:id="@+id/tv_short_characterstics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tv_dummy_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12ssp"
+            android:textColor="@color/black1"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_2ssp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tv_dummy_main_area_usage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_12ssp"
+            android:textColor="@color/black1"
+            android:text="@string/main_area_of_usage" />
+        <View
+            android:id="@+id/view_dummy"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/gray100"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_usage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp" />
+        <LinearLayout
+            android:id="@+id/ll_dummy_safety_instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/colorPrimary">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12ssp"
+                android:textColor="@color/white"
+                android:text="@string/safety_instruction" />
+            <TextView
+                android:id="@+id/tv_safety_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_12ssp"
+                android:textColor="@color/white"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_main_constitutent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/main_constituents" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_main_constituents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_5sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_found_blend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_12ssp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:text="@string/found_in_blends" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_found_blends"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp" />
+        </LinearLayout>
+       <LinearLayout
+           android:id="@+id/ll_main_property"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_margin="@dimen/_12ssp">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textColor="@color/black1"
+               android:text="@string/main_properties" />
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rv_main_properties"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginTop="@dimen/_5sdp" />
+       </LinearLayout>
+
+        <!--// using this view for blend main constituent-->
+        <RelativeLayout
+            android:id="@+id/rl_blend_well_with"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_12ssp">
+            <TextView
+                android:id="@+id/tv_blend_well_with"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:text="@string/blends_well_with" />
+            <TextView
+                android:id="@+id/tv_main_constituent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black1"
+                android:text="@string/main_constituents"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_blend_well_with"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_margin="@dimen/_12ssp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

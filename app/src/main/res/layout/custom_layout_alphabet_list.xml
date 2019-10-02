@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_40sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_2ssp"
+    android:layout_marginBottom="@dimen/_5dp"
+    android:layout_marginEnd="@dimen/_2ssp">
+
+
+    <TextView
+        android:id="@+id/tv_letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginEnd="@dimen/_2ssp"
+        android:layout_centerInParent="true"
+        android:text="A" />
+</RelativeLayout>

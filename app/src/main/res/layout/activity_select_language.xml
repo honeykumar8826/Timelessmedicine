@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/white_bg"
+    tools:context="com.app.timelessmedicine.ui.selectlanguage.SelectLanguageActivity">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_13ssp"
+        android:id="@+id/tv_title"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:textColor="@color/text_color_title"
+        android:text="@string/please_choose_your_preferred_nlanguage_to_continue"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:id="@+id/title_view"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableEnd="@drawable/down_arrow"
+            android:fontFamily="@font/roboto_regular"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/select_language"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/langView"
+        app:layout_constraintTop_toBottomOf="@+id/title_view"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableEnd="@drawable/down_arrow"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:id="@+id/rbEng"
+                android:textAlignment="textStart"
+                android:textColor="@color/black1"
+                android:paddingTop="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:button="@drawable/radio_btn_custom"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/english"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:id="@+id/rbHung"
+                android:textAlignment="textStart"
+                android:textColor="@color/black1"
+                android:paddingTop="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:button="@drawable/radio_btn_custom"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/hungarian"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:id="@+id/rbSlov"
+                android:textAlignment="textStart"
+                android:textColor="@color/black1"
+                android:paddingTop="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:button="@drawable/radio_btn_custom"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/slovakia"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:id="@+id/rbCzch"
+                android:textAlignment="textStart"
+                android:textColor="@color/black1"
+                android:paddingTop="@dimen/_10sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:button="@drawable/radio_btn_custom"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/czech"/>
+
+        </RadioGroup>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

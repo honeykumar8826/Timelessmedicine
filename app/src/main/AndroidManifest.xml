@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.app.timelessmedicine">
+
+     <!-- Network Permission -->
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <activity android:name=".ui.propertydetail.PropertyDetailActivity"
+            android:theme="@style/CustomStyle"/>
+        <activity android:name=".ui.properties.PropertyActivity"
+            android:theme="@style/CustomStyle"/>
+        <activity
+            android:name=".ui.oilandblenddetail.OilAndBlendDetailActivity"
+            android:theme="@style/CustomStyle"/>
+        <activity android:name=".ui.oilsandblends.OilsBlendsActivity"
+            android:theme="@style/CustomStyle"/>
+        <activity android:name=".ui.home.HomeActivity">
+        </activity>
+        <activity android:name=".ui.selectcountry.SelectCountryActivity" />
+        <activity android:name=".ui.selectlanguage.SelectLanguageActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/SplashTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".utils.TakeImageUtil" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- Location Permission -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> <!-- Camera Permission -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+</manifest>

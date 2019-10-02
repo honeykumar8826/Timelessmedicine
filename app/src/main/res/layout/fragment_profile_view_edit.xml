@@ -1,0 +1,268 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.app.timelessmedicine.database.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_bg"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:id="@+id/profile_view"
+        tools:context=".ui.profileviewedit.ProfileViewEditFragment">
+
+        <com.app.timelessmedicine.utils.CircularImageView
+            android:id="@+id/userProfileImg"
+            android:layout_gravity="center"
+            android:src="@drawable/placeholder"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera"
+            android:id="@+id/btn_photo"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@+id/userProfileImg"
+            app:layout_constraintEnd_toEndOf="@+id/userProfileImg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_name"
+            android:id="@+id/tv_head_fn"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userProfileImg"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.first_name}"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/tv_first_name"
+            android:textColor="@color/gray1"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:textSize="@dimen/_11ssp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_fn"
+            app:layout_constraintTop_toBottomOf="@+id/userProfileImg"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_name"
+            android:id="@+id/tv_head_ln"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_fn"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.last_name}"
+            android:id="@+id/tv_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:textColor="@color/gray1"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_ln"
+            app:layout_constraintTop_toTopOf="@+id/tv_head_ln"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_id"
+            android:id="@+id/tv_head_email"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_ln"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.email_id}"
+            android:id="@+id/tv_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@null"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_email"
+            app:layout_constraintTop_toTopOf="@+id/tv_head_email"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unique_id"
+            android:id="@+id/tv_head_unique"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_email"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.unique_id}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:id="@+id/tv_unique"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray1"
+            android:maxLength="30"
+            android:enabled="false"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_unique"
+            app:layout_constraintTop_toTopOf="@+id/tv_head_unique"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/referral_id"
+            android:id="@+id/tv_head_referral"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_unique"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.refercode}"
+            android:id="@+id/tv_referral"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/_11ssp"
+            android:enabled="false"
+            android:maxLength="30"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_referral"
+            app:layout_constraintTop_toTopOf="@+id/tv_head_referral"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suscription_ends"
+            android:id="@+id/tv_head_subscription"
+            android:textColor="@color/gray3"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_referral"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="DD/MM/YY"
+            android:id="@+id/tv_subscription"
+            android:background="@null"
+            android:enabled="false"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:textColor="@color/gray1"
+            android:textSize="@dimen/_11ssp"
+            android:maxLength="20"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/tv_head_subscription"
+            app:layout_constraintTop_toTopOf="@+id/tv_head_subscription"/>
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uniqueGroup"
+            app:constraint_referenced_ids="tv_head_unique,tv_unique"/>
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/referralGroup"
+            app:constraint_referenced_ids="tv_head_referral,tv_referral"/>
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subscriptionGroup"
+            app:constraint_referenced_ids="tv_head_subscription,tv_subscription"/>
+
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:id="@+id/btnSave"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="@string/edit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_subscription"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

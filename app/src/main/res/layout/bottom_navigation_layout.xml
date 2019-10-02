@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+<HorizontalScrollView
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:padding="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home"
+            android:id="@+id/btnHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCondition"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCondition"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnHome"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/condition"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSymptoms"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnCondition"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/symptoms"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRemedies"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnSymptoms"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/remedies"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnOilBlends"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnRemedies"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/oils_and_blends"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSupplements"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnOilBlends"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/supplements"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnProperties"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnSupplements"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/properties"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMeReferral"
+            android:layout_marginStart="@dimen/_30sdp"
+            app:layout_constraintStart_toEndOf="@+id/btnProperties"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/me_and_referral"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
