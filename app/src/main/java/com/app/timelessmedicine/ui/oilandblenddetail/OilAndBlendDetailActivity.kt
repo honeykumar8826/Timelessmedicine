@@ -21,6 +21,7 @@ import com.app.timelessmedicine.utils.ProgressDialogUtils
 import kotlinx.android.synthetic.main.activity_oil_and_blend_detail.*
 import kotlinx.android.synthetic.main.activity_oil_and_blend_detail.img_back
 import kotlinx.android.synthetic.main.activity_oil_and_blend_detail.tv_title_name
+import kotlinx.android.synthetic.main.activity_oils_blends.*
 import showShortToast
 
 class OilAndBlendDetailActivity : AppCompatActivity() {
@@ -28,7 +29,10 @@ class OilAndBlendDetailActivity : AppCompatActivity() {
     private lateinit var blendData: SingleBlendBean
     private lateinit var oilBlendDetailViewModel: OilBlendDetailViewModel
     private lateinit var oilList: ArrayList<AllData>
+    // for changing the value of list in 3 pairs on button click
+    private lateinit var tempOilList: ArrayList<AllData>
     private lateinit var blendList: ArrayList<ForAndroidBlend>
+    private lateinit var tempBlendList: ArrayList<ForAndroidBlend>
     private lateinit var mainConstituentList: ArrayList<MainConstituentBean>
     private lateinit var foundBlendList: ArrayList<CommonNameTypeBean>
     private lateinit var mainPropertyList: ArrayList<CommonNameTypeBean>
@@ -47,6 +51,16 @@ class OilAndBlendDetailActivity : AppCompatActivity() {
 
                 finish()
 
+        }
+        tv_more.setOnClickListener {
+            if(intent.getStringExtra("item_type").equals("1"))
+            {
+              setTempOilList(tempOilList.size+2)
+            }
+            else
+            {
+
+            }
         }
         img_share_oil_blend.setOnClickListener {
             val i = Intent(Intent.ACTION_VIEW)
@@ -148,9 +162,10 @@ class OilAndBlendDetailActivity : AppCompatActivity() {
         oilBlendDetailViewModel.getSingleOilData(oilName).observe(this, Observer {
             oilData = it
             tv_title_name.text = oilData.response.oil_name
+            setUpRecyclerView()
             setDataListForOils(oilData.response.all_data)
             setVisibilityOfLayoutOn()
-            setUpRecyclerView()
+
             setValueForTextView()
             setUpListForMainConstituent(oilData.response.Main_constituents)
             setUpListForFoundBlend(oilData.response.objectdata.Found_in_blend)
@@ -303,7 +318,7 @@ class OilAndBlendDetailActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         rv_main_usage!!.layoutManager = LinearLayoutManager(this)
-        rv_main_usage.adapter = OilMainUsageAdapter(this, oilList)
+        rv_main_usage.adapter = OilMainUsageAdapter(this, tempOilList)
         rv_main_usage.setHasFixedSize(true)
     }
     private fun setUpRecyclerViewForBlend() {
@@ -316,17 +331,40 @@ class OilAndBlendDetailActivity : AppCompatActivity() {
         for (i in 0..allData.size - 1) {
             oilList.add(allData.get(i))
         }
+        setTempOilList(2)
+    }
+
+    private fun setTempOilList(uptoIndex: Int) {
+        if(uptoIndex<=2)
+        {
+            for (i in 0..uptoIndex)
+            {
+                tempOilList.add(oilList.get(i))
+            }
+        }
+        else
+        {
+            tempOilList.clear()
+            for (i in 0..uptoIndex)
+            {
+                tempOilList.add(oilList.get(i))
+            }
+        }
+        (rv_main_usage.adapter as OilMainUsageAdapter)?.notifyDataSetChanged()
+
     }
 
     private fun setInItId() {
 
         oilList = ArrayList()
+        tempOilList = ArrayList()
         mainConstituentList = ArrayList()
         foundBlendList = ArrayList()
         mainPropertyList = ArrayList()
         blendWellList = ArrayList()
         blendConstituentList = ArrayList()
         blendList = ArrayList()
+        tempBlendList = ArrayList()
         oilBlendDetailViewModel =
             ViewModelProviders.of(this).get(OilBlendDetailViewModel::class.java)
         oilBlendDetailViewModel.inIt()
